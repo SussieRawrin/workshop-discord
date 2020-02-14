@@ -16,7 +16,9 @@
   "author": "stormy",
   "private": true,
   "dependencies": {
-    "chalk": "^3.0.0"
+    "chalk": "^3.0.0",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",

@@ -3,3 +3,6 @@ dist
 
 # i'm using yarn, if you accidently do npm install i don't want it thanks
 package-lock.json
+
+*.log
+*.env

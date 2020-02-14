@@ -19,7 +19,7 @@
     "sourceMap": false,
     "baseUrl": ".",
     "types": [
-
+      "node"
     ],
     "paths": {
       "@/*": [
