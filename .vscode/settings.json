@@ -1,0 +1,57 @@
+{
+  "debug.node.autoAttach": "on",
+  "eslint.validate": [
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ],
+
+  /* vscode stuff */
+  "editor.tabSize": 2,
+  "editor.hover.delay": 200,
+
+  /* anchor things */
+
+  /**
+    Required properties:
+
+      tag - Specifies the name of the tag
+      scope - The scope of a tag. Specifying "file" will only make these visible in the 'File Anchors' list
+      iconColor - The color used for the icon
+      highlightColor - The color used for highlighting the tag
+
+    Optional properties:
+
+      backgroundColor - The color used as tag background
+      styleComment - Boolean indicating whether to style the entire comment, or just the tag
+      borderStyle - Style to be applied to the tag border (See https://www.w3schools.com/cssref/pr_border.asp)
+      borderRadius - The curvature radius of the border (Requires borderStyle)
+      isBold - Whether to apply bold formatting to the tag
+      isItalic - Whether to apply italicized formatting to the tag
+      isRegion - Mark this anchor as a region anchor
+      enabled - Allows the disabling of default (and custom) tags
+  */
+  "commentAnchors.tags.list": [
+    {
+      "tag": "BEWARE",
+      "iconColor": "default",
+      "highlightColor": "#ff8040",
+      "scope": "file",
+
+      "isItalic": true,
+      /* "styleComment": true, */
+    },
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  /* 02/14/2020 */
+  "eslint.workingDirectories": [
+    "discord",
+}

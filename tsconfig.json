@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+
+    "outDir": "dist",
+
+    // 
+    
+    "target": "esnext",
+    "module": "commonjs",
+    // "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "types": [
+
+    ],
+    "paths": {
+      "@/*": [
+        "discord/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "discord/**/*.ts",
+    "discord/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
