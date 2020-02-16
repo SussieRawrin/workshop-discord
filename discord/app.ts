@@ -6,7 +6,7 @@ import { WorkshopCodeParser } from './package';
 
 const { parse } = new WorkshopCodeParser();
 
-/* fix variables */
+/* config variables */
 config();
 
 /* terminal prefix */
