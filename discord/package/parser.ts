@@ -32,7 +32,7 @@ export class WorkshopCodeParser {
   parse = async (message: Message) => {
 
     /* /(?<=\(\()[A-Z0-9]{5}(?=\)\))/i: matches the first ((anyth)) and (not including the (())) */
-    const matches = message.content.match(/(?<=\(\(|{{)[A-Z0-9]{5}(?=\)\)|}})/i/* g */);
+    const matches = message.content.match(/(?<=[({]{2})[A-Z0-9]{5}(?=[})]{2})/i/* g */);
 
     /* if there are no codes in the message, stop here */
     if (!matches) return;
