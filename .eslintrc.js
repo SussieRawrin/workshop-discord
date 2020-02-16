@@ -6,7 +6,7 @@ module.exports = {
 
   parser: '@typescript-eslint/parser',
   extends: [
-    /* 'plugin:@typescript-eslint/recommended', */
+    // 'plugin:@typescript-eslint/recommended',
     'airbnb-typescript/base',
   ],
   parserOptions: {
@@ -26,5 +26,10 @@ module.exports = {
     'object-curly-newline': 0,
     '@typescript-eslint/no-explicit-any': 0,
     'template-curly-spacing': ['error', 'always'],
+
+    'import/prefer-default-export': 0,
+    'object-curly-spacing': ['error', 'always'],
+    // 'padded-blocks': ["error", "always"],
+    'padded-blocks': 0,
   },
 };

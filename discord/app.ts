@@ -1,26 +1,27 @@
 /* imports, TODO discord import optimization */
 import { magentaBright, yellowBright } from 'chalk';
 import { config } from 'dotenv';
-import * as discord from 'discord.js';
+import { Client } from 'discord.js';
+import { WorkshopCodeParser } from './package';
+
+const { parse } = new WorkshopCodeParser();
 
 /* fix variables */
 config();
 
-/* console prefix */
+/* terminal prefix */
 const prefix = `${ magentaBright('discord') }>`;
 
 /* discord things */
-const client = new discord.Client();
-client.login(process.env.discord_token).catch((error) => {
-  console.error(magentaBright(error));
-  console.error(magentaBright('  • is "discord_token" in your .env?'));
-  process.exit();
-});
+const client = new Client();
+client.login(process.env.discord_token)
+  .catch((error) => {
+    console.error(`${ magentaBright(error) }\n'  • is ${ magentaBright('"discord_token"') } in your .env?`);
+    process.exit();
+  });
 
-/**
- * this is when the bot boots
- * @event 'ready'
-*/
-client.once('ready', () => {
-  console.info(prefix, `${ yellowBright(client.user.tag) } signed in`);
-});
+/* this is when the bot boots */
+client.once('ready', () => console.info(prefix, `${ yellowBright(client.user.tag) } signed in`));
+
+/* view messages for workshop codes */
+client.on('message', async (message) => parse(message));

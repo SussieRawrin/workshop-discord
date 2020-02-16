@@ -24,6 +24,12 @@
     "paths": {
       "@/*": [
         "discord/*"
+      ],
+      "@void/*": [
+        "void/*"
+      ],
+      "@animations/*": [
+        "discord/animations/*"
       ]
     },
     "lib": [
