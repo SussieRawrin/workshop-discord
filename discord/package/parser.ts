@@ -85,6 +85,10 @@ export class WorkshopCodeParser {
     const image = await newPreviewImage({ code, color });
     if (image) await embed.setImage(`attachment://${ code }.png`);
 
+    /* player icon */
+    let icon = 'https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/24/4c/a2/244ca280-12b5-55f9-3eaf-6b08b750919d/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/246x0w.png';
+    if (data.owner.icons && data.owner.icons.icon) icon = data.owner.icons.icon;
+
     /* write mail */
     const date = new Date(data.updated);
     embed
@@ -99,8 +103,7 @@ export class WorkshopCodeParser {
       .setColor(color)
       .setAuthor(
         data.owner.battletag,
-        /* TODO icondata in players :C */
-        'https://d15f34w2p8l1cc.cloudfront.net/overwatch/f0a757c0b3ef4bcf7d65a142685281701d7813f0497b20be22903a94d8fcb3d3.png',
+        icon,
         `https://workshopcodes.com/profile/${ data.owner.battletag.replace('#', '@') }`,
       )
       .setFooter(`workshopcodes.com/${ code }`)
